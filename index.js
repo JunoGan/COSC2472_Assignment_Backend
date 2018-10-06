@@ -16,7 +16,7 @@ if (!config.get('jwtPrivateKey')) {
   process.exit(1);
 }
 
-mongoose.connect('mongodb://localhost/vidly')
+mongoose.connect('mongodb://juno:s19930711@ds123783.mlab.com:23783/pro-assistant')
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...'));
 
