@@ -22,12 +22,12 @@ router.post('/', async (req, res) => {
 });
 
 
-// router.get('/:uid', async (req, res) => {
-//   const requests = await Request.find({ uid: req.params.uid});
+router.get('/:id', async (req, res) => {
+  const request = await Request.findById(req.params.id);
 
-//   if (!requests) return res.status(404).send('The request with the given ID was not found.');
+  if (!request) return res.status(404).send('The request with the given ID was not found.');
 
-//   res.send(requests);
-// });
+  res.send(request);
+});
 
 module.exports = router; 
