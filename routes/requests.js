@@ -14,7 +14,6 @@ router.post('/', async (req, res) => {
     status: req.body.status,
     time: req.body.time,
     title: req.body.title,
-    uid: req.body.uid
   });
   await request.save();
   
