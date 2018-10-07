@@ -23,11 +23,11 @@ router.post('/', async (req, res) => {
 
 
 router.get('/:id', async (req, res) => {
-  const request = await Request.findById(req.params.id);
+  const requests = await Request.find({ userId: req.params.id});
 
-  if (!request) return res.status(404).send('The request with the given ID was not found.');
+  if (!requests) return res.status(404).send('The request with the given ID was not found.');
 
-  res.send(request);
+  res.send(requests);
 });
 
 module.exports = router; 
