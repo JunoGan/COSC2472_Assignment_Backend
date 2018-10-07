@@ -38,6 +38,10 @@ const Request = mongoose.model('Request', new mongoose.Schema({
     required: true,
     minlength: 1,
     maxlength: 255
+  },
+  uid: {
+    type: String,
+    required: true,
   }
 }));
 
@@ -48,7 +52,8 @@ function validateRequest(request) {
     phone: Joi.string().min(1).max(255).required(),
     status: Joi.string().min(1).max(255).required(),
     time: Joi.string().min(1).max(255).required(),
-    title: Joi.string().min(1).max(255).required()
+    title: Joi.string().min(1).max(255).required(),
+    uid: Joi.String.request()
   };
 
   return Joi.validate(request, schema);
